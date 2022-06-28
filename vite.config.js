@@ -5,4 +5,9 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+
+  server: {
+    open: true,
+    port: 3111,
+  },
 })

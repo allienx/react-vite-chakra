@@ -1,6 +1,5 @@
 {
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -8,7 +7,9 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "gen:theme-typings": "chakra-cli tokens src/config/theme/theme.ts",
+    "postinstall": "yarn run gen:theme-typings"
   },
   "dependencies": {
     "@chakra-ui/react": "2.2.1",
@@ -20,6 +21,7 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "2.0.0",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "@typescript-eslint/eslint-plugin": "5.27.1",
